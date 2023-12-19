@@ -1,35 +1,81 @@
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Adicione estilos conforme necessário para as redes sociais e o rodapé */
-
-footer {
-    background-color: #333;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #fff;
-    padding: 20px;
-    text-align: center;
 }
 
-/* Adicione transições conforme necessário para as imagens */
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#gallery img:hover {
+    transform: scale(1.1);
+}
+
+#calendar {
+    text-align: center;
+    padding: 20px;
+}
+
+#calendar img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.outer-container {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imagem-container {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.imagem-container:hover {
+    transform: scale(1.1);
+}
+
 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
     transition: transform 0.5s ease-in-out;
 }
 
 img:hover {
     transform: scale(1.1);
-}
-
-/* Adicione ao estilo CSS para personalizar os formulários */
-.contact-form,
-.product-form {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
 }
 
 label {
@@ -50,36 +96,118 @@ textarea {
 
 button {
     background-color: #333;
-    color: #fff;
+    color: #fd0000;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-/* Adicione ao estilo CSS para marquee e opacidade */
-.marquee {
-    white-space: nowrap;
-    overflow: hidden;
+.marquee-container {
     position: relative;
-    box-sizing: border-box;
-    animation: marquee 15s linear infinite;
+    overflow: hidden;
 }
 
-.marquee:hover {
-    animation-play-state: paused;
+.marquee-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff0000;
+    background-size: auto;
+    z-index: -1;
+}
+
+.marquee-content {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px;
+    animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
     0% {
-        left: 100%;
+        transform: translateX(100%);
     }
 
     100% {
-        left: -100%;
+        transform: translateX(-100%);
     }
 }
 
 .opacity-effect {
     opacity: 0.8;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+    margin-left: 10px;
+    box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:first-child {
+    margin-left: 0;
+}
+
+.social-icons a:hover {
+    color: #970101;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.custom-input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #ff0000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.product-form {
+    max-width: 600px;
+    margin: 50px auto 70px;
+    padding: 20px;
+    background-color: #ff0000;
+    border-radius: 8px;
+}
+
+.product-form button {
+    background-color: #ffffff;
+    color: #ff0000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-form button:hover {
+    background-color: #970101;
+    color: #ffffff;
+
 }
